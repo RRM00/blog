@@ -1,0 +1,37 @@
+{% extends 'base.htm' %}
+
+{% block title %} contact {% endblock title %}
+
+
+{% block body %}
+<div class="container">  
+<h3>Create Your Blog </h3>
+<form method="post" action="/contact">
+ {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Title</label>
+    <input type="text" class="form-control" id="name" name="title" aria-describedby="name">
+    <div id="name" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Author</label>
+    <input type="text" class="form-control" id="email" name="author" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Slug</label>
+    <input type="text" class="form-control" name="slug" id="phone">
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Summary</label>
+    <input type="text" class="form-control" name="summary" id="phone">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock body %}
